@@ -31,7 +31,7 @@ const Generate = () => {
   }
 
   return (
-    <div className="w-full h-full grid md:grid-cols-[1.25fr_1fr] gap-10 grow">
+    <div className="w-full h-full grid md:grid-cols-[1.25fr_0.75fr] gap-10 grow">
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={activeView}

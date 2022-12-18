@@ -6,6 +6,7 @@ import TableIcon from '@icons/table.svg'
 import CodeIcon from '@icons/code.svg'
 import Json from '@components/generate/views/json'
 import RefreshIcon from '@icons/refresh.svg'
+import DownloadIcon from '@icons/download.svg'
 
 enum Views {
   TABLE,
@@ -91,15 +92,22 @@ const Generated = ({ fields }: any) => {
               <RefreshIcon className="w-6 h-6 fill-current text-gray-300" />
               <span className="sr-only">Regenerate</span>
             </button>
+            {/*<button*/}
+            {/*  onClick={() => {*/}
+            {/*    generate()*/}
+            {/*    toast.success('Data regenerated')*/}
+            {/*  }}*/}
+            {/*  className="bg-gray-900 p-2 rounded-md border border-gray-800 hover:border-gray-700 hover:bg-gray-800 transition-colors duration-200 ease-in-out"*/}
+            {/*>*/}
+            {/*  <DownloadIcon className="w-6 h-6 fill-current text-gray-300" />*/}
+            {/*  <span className="sr-only">Download</span>*/}
+            {/*</button>*/}
           </div>
         </div>
         <div className="bg-gray-950 p-2 rounded-lg border border-gray-900">
           {view === Views.TABLE && <Table data={data} />}
           {view === Views.JSON && <Json data={data} />}
         </div>
-      </div>
-      <div className="flex flex-col gap-2">
-
       </div>
     </div>
   )
