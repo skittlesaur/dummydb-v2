@@ -19,7 +19,7 @@ const formatValue = (value: any): string => {
 
 const Table = ({ data }: any) => {
   return (
-    <div className="relative flex flex-col gap-4 h-[23em] overflow-y-auto">
+    <div className="relative flex flex-col gap-4 min-h-full">
       <div
         className="grid sticky top-0 bg-gray-950 px-2 py-1 gap-4"
         style={{ gridTemplateColumns: `repeat(${data[0]?.length}, 1fr)` }}

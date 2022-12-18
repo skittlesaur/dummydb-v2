@@ -1,3 +1,5 @@
+import SyntaxHighlighter from 'react-syntax-highlighter'
+
 const Json = ({ data }: any) => {
   const formatted = data.map((fields: any) => {
     const obj: any = {}
@@ -8,10 +10,13 @@ const Json = ({ data }: any) => {
   })
 
   return (
-    <div className="relative flex flex-col gap-4 h-[23em] overflow-y-auto">
-      <pre className="text-gray-300 text-sm font-mono">
+    <div className="relative flex flex-col gap-4">
+      <SyntaxHighlighter
+        language="json"
+        useInlineStyles={false}
+      >
         {JSON.stringify(formatted, null, 2)}
-      </pre>
+      </SyntaxHighlighter>
     </div>
   )
 }

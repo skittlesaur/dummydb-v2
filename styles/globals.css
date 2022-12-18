@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hljs-attr {
+    color: #07cb79;
+}
+
+.hljs-string, .hljs-number, .hljs-literal {
+    color: #E5E5E5;
+}
+
+.hljs {
+    color: #A3A3A3;
+}

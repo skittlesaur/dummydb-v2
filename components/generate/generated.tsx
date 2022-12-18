@@ -56,8 +56,10 @@ const Generated = ({ fields }: any) => {
             </button>
           </div>
         </div>
-        {view === Views.TABLE && <Table data={data} />}
-        {view === Views.JSON && <Json data={data} />}
+        <div className="bg-gray-950 p-2 rounded-lg border border-gray-900">
+          {view === Views.TABLE && <Table data={data} />}
+          {view === Views.JSON && <Json data={data} />}
+        </div>
       </div>
       <div className="flex flex-col gap-2">
 
