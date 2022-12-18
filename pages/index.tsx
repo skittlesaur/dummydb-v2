@@ -14,7 +14,7 @@ const HomePage = (props: any) => {
 }
 
 export const getStaticProps = async () => {
-  const releases = await fetch('https://api.github.com/repos/skittlesaur/dummydb-v2/releases')
+  const releases = await fetch('https://api.github.com/repos/skittlesaur/dummydb/releases')
   const releasesData = await releases.json()
 
   return {

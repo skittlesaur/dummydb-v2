@@ -7,13 +7,13 @@ const pages = [
   },
   {
     title: 'Contribute',
-    href: 'https://github.com/skittlesaur/dummydb-v2',
+    href: 'https://github.com/skittlesaur/dummydb',
   },
 ]
 
 const Navigation = () => {
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-900 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-gray-900 backdrop-blur px-4 md:px-0">
       <div className="max-w-screen-xl mx-auto py-5 flex items-center justify-between">
         <div className="italic font-medium select-none">
           dummy<span className="text-primary font-semibold">DB</span>
