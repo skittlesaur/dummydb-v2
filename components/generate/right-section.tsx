@@ -22,7 +22,7 @@ const RightSection = () => {
   const ref = useRef<HTMLDivElement>(null)
 
   return (
-    <div className="fixed top-full -translate-y-1/3 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-0 md:top-0 right-0 w-[140%] h-60 -rotate-12 md:rotate-0 md:h-full md:w-[40%] bottom-0 overflow-hidden">
+    <div className="fixed top-full -translate-y-1/3 md:translate-y-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-0 md:top-0 right-0 w-[140%] h-60 -rotate-12 md:rotate-0 md:h-full md:w-[40%] bottom-0 overflow-hidden">
       <div ref={ref} className="relative w-full h-full">
         <div className="absolute top-0 h-[1px] w-full md:left-0 md:w-[1px] md:h-full z-[2] bg-gradient-to-b from-gray-700 to-gray-800" />
         <div className="absolute inset-0 z-[1] backdrop-blur-[100px]" />
