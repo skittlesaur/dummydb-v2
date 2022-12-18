@@ -92,7 +92,7 @@ const Modal = ({ hideModal, updateType }: any) => {
             </button>
           </div>
         </div>
-        <div className="relative grid grid-cols-2 md:grid-cols-4 grid-rows-6 gap-2 px-2 md:px-12 py-6 overflow-y-auto h-full w-full">
+        <div className="relative grid grid-cols-2 md:grid-cols-4 md:grid-rows-6 gap-2 px-2 md:px-12 py-6 overflow-y-auto h-full w-full">
           {searchResult === undefined && categories[activeCategory].types.map(type => (
             <button
               key={type.title}
