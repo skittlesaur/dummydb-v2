@@ -16,12 +16,10 @@ const Schema = ({ generate }: any) => {
 
   const addField = () => {
     setFields(prev => [...prev, { id: generateId(), name: '', type: '' }])
-    toast.success('Added a new field')
   }
 
   const removeField = (index: number) => {
     setFields(prev => prev.filter((_, i) => i !== index))
-    toast.success('Removed a field')
   }
 
   const updateField = (index: number, field: { id: string, name: string, type: string }) => {
@@ -29,7 +27,7 @@ const Schema = ({ generate }: any) => {
   }
 
   return (
-    <div className="flex flex-col justify-between gap-14 grow">
+    <div className="flex flex-col justify-between gap-14 grow min-h-full">
       <AnimatePresence mode="wait">
         {modalOpen !== -1 && (
           <Modal
@@ -52,7 +50,7 @@ const Schema = ({ generate }: any) => {
             generate your test data.
           </p>
         </div>
-        <div className="flex flex-col gap-4 h-[23em] overflow-y-auto py-5">
+        <div className="flex flex-col gap-4 py-5">
           {fields.map((field, i) => (
             <Field
               key={field.id}
