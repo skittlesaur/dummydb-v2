@@ -5,18 +5,21 @@ import Table from '@components/generate/views/table'
 import TableIcon from '@icons/table.svg'
 import CodeIcon from '@icons/code.svg'
 import Json from '@components/generate/views/json'
+import RefreshIcon from '@icons/refresh.svg'
 
 enum Views {
   TABLE,
   JSON
 }
 
+const maxRows = 1000
+
 const Generated = ({ fields }: any) => {
   const [view, setView] = useState(Views.TABLE)
   const [count, setCount] = useState(10)
   const [data, setData] = useState<any>()
 
-  useEffect(() => {
+  const generate = () => {
     if (!fields) return
     if (count < 0) {
       toast.error('Count cannot be less than 0')
@@ -25,6 +28,10 @@ const Generated = ({ fields }: any) => {
 
     const res = generateFields(fields, count)
     setData(res)
+  }
+
+  useEffect(() => {
+    generate()
   }, [fields, count])
 
   if (!data)
@@ -42,7 +49,27 @@ const Generated = ({ fields }: any) => {
               Generated data ready to be used in your application.
             </p>
           </div>
-          <div>
+          <div className="flex items-stretch gap-2">
+            <input
+              value={count}
+              onChange={(e) => {
+                const count = parseInt(e.target.value)
+                if (count && isNaN(count)) {
+                  setCount(10)
+                  toast.error('Count must be a number')
+                  return
+                }
+
+                if (count > maxRows) {
+                  setCount(maxRows)
+                  toast.error(`Count cannot be greater than ${maxRows}`)
+                  return
+                }
+
+                setCount(count || 0)
+              }}
+              className="w-14 text-center font-mono text-lg bg-gray-900 rounded-md border border-gray-800 hover:border-gray-700 hover:bg-gray-800 transition-colors duration-200 ease-in-out"
+            />
             <button
               onClick={() => setView(prev => prev === Views.TABLE ? Views.JSON : Views.TABLE)}
               className="bg-gray-900 p-2 rounded-md border border-gray-800 hover:border-gray-700 hover:bg-gray-800 transition-colors duration-200 ease-in-out"
@@ -53,6 +80,16 @@ const Generated = ({ fields }: any) => {
                 <TableIcon className="w-6 h-6 fill-current text-gray-300" />
               )}
               <span className="sr-only">{view === Views.TABLE ? 'Change to JSON view' : 'Change to table view'}</span>
+            </button>
+            <button
+              onClick={() => {
+                generate()
+                toast.success('Data regenerated')
+              }}
+              className="bg-gray-900 p-2 rounded-md border border-gray-800 hover:border-gray-700 hover:bg-gray-800 transition-colors duration-200 ease-in-out"
+            >
+              <RefreshIcon className="w-6 h-6 fill-current text-gray-300" />
+              <span className="sr-only">Regenerate</span>
             </button>
           </div>
         </div>
