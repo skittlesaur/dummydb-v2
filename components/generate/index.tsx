@@ -3,6 +3,7 @@ import RightSection from '@components/generate/right-section'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Generated from '@components/generate/generated'
+import toast from 'react-hot-toast'
 
 enum Views {
   SCHEMA,
@@ -14,6 +15,17 @@ const Generate = () => {
   const [fields, setFields] = useState<{ id: string, name: string, type: string }[]>([])
 
   const generate = (fields: { id: string, name: string, type: string }[]) => {
+    for (const field of fields) {
+      if (!field.name) {
+        toast.error('Field name cannot be empty')
+        return
+      }
+
+      if (!field.type) {
+        toast.error('Field type cannot be empty')
+        return
+      }
+    }
     setFields(fields)
     setActiveView(Views.GENERATED)
   }
