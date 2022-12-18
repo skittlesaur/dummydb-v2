@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
-const THEME_COLOR = '#ffffff'
-const URL = ''
+const THEME_COLOR = '#000'
+const URL = 'https://dummydb.baraa.app'
 const DEFAULT_OG_IMAGE = '/og-image.png'
 const TWITTER_SITE = '@skittlesaur'
 const TWITTER_CREATOR = '@skittlesaur'
