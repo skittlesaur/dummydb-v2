@@ -11,12 +11,12 @@ const Field = ({ field, removeField, updateField, setModalOpen }: any) => {
         aria-autocomplete="none"
         onChange={e => updateField({ ...field, name: e.target.value })}
         placeholder="Property name"
-        className="w-full bg-inherit placeholder-gray-400 border border-gray-300 dark:border-gray-700 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+        className="bg-gray-950 shadow-lg w-full bg-inherit placeholder-gray-400 border border-gray-300 dark:border-gray-700 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
       />
       <button
         onClick={setModalOpen}
         id="type"
-        className={`w-full text-start ${field.type ? 'text-gray-50' : 'text-gray-400'} bg-inherit border border-gray-300 dark:border-gray-700 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent`}
+        className={`bg-gray-950 shadow-lg w-full text-start ${field.type ? 'text-gray-50' : 'text-gray-400'} bg-inherit border border-gray-300 dark:border-gray-700 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent`}
       >
         {field.type || 'Property type'}
       </button>
