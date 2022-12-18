@@ -64,7 +64,7 @@ const Header = () => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col gap-5">
-        <h1 className="text-5xl font-bold">
+        <h1 className="text-4xl md:text-5xl font-bold">
           Generate test
           {' '}
           <span className="italic font-mono inline-flex gap-2 before:font-mono before:content-['{'] before:text-primary after:font-mono after:content-['}'] after:text-primary">
@@ -73,7 +73,7 @@ const Header = () => {
           {' '}
           on the fly
         </h1>
-        <div className="dark:text-gray-400 h-20">
+        <div className="dark:text-gray-400 h-24 md:h-20">
           <AnimatePresence mode="wait">
             <motion.p
               initial={{ opacity: 0, y: 20 }}

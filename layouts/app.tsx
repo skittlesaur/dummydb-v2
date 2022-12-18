@@ -7,7 +7,7 @@ interface AppProps {
 
 const AppLayout = ({ children }: AppProps) => {
   return (
-    <div className="relative bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 w-full min-h-screen flex flex-col">
+    <div className="relative bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 w-full min-h-screen flex flex-col px-4 md:px-0">
       <Navigation />
       <div className="w-full max-w-screen-xl mx-auto py-12 flex flex-col h-full grow">
         {children}

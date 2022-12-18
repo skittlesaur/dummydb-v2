@@ -29,10 +29,10 @@ const Modal = ({ hideModal, updateType }: any) => {
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.2, delay: 0.1 }}
         onClick={e => e.stopPropagation()}
-        className="shadow-lg bg-gray-900 border border-gray-700 rounded-md w-2/3 max-w-[66%] overflow-hidden aspect-video cursor-default"
+        className="shadow-lg bg-gray-900 border border-gray-700 rounded-md w-[90%] max-h-[60%] md:w-2/3 md:max-w-[66%] overflow-hidden md:aspect-video cursor-default"
       >
-        <div className="flex items-center justify-between gap-2 border-b border-gray-800 px-6 py-4 h-16">
-          <div className="z-[1] relative flex items-center gap-4">
+        <div className="flex items-center justify-between gap-2 border-b border-gray-800 px-4 py-2 h-14 md:px-6 md:py-4 md:h-16">
+          <div className="z-[1] relative flex items-center gap-2 md:gap-4">
             {categories.map((category, idx) => (
               <button
                 key={category.title}
@@ -92,7 +92,7 @@ const Modal = ({ hideModal, updateType }: any) => {
             </button>
           </div>
         </div>
-        <div className="relative grid grid-cols-4 grid-rows-6 gap-2 px-12 py-6 overflow-y-auto h-full w-full">
+        <div className="relative grid grid-cols-2 md:grid-cols-4 grid-rows-6 gap-2 px-2 md:px-12 py-6 overflow-y-auto h-full w-full">
           {searchResult === undefined && categories[activeCategory].types.map(type => (
             <button
               key={type.title}
