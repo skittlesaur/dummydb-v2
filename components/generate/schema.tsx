@@ -4,7 +4,6 @@ import Field from '@components/generate/field'
 import AddIcon from '@icons/add.svg'
 import { useState } from 'react'
 import generateId from '@lib/generate-id'
-import toast from 'react-hot-toast'
 
 const Schema = ({ generate }: any) => {
   const [fields, setFields] = useState<{ id: string, name: string, type: string }[]>([{
