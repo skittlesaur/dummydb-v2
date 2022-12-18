@@ -6,7 +6,7 @@ const HomePage = (props: any) => {
   return (
     <AppLayout>
       <SEO
-        title="baraa.app"
+        title="dummyDB"
       />
       <Home {...props} />
     </AppLayout>

@@ -2,9 +2,9 @@ import Head from 'next/head'
 
 const THEME_COLOR = '#ffffff'
 const URL = ''
-const DEFAULT_OG_IMAGE = '/images/og-image.png'
-const TWITTER_SITE = ''
-const TWITTER_CREATOR = '@appbaraa'
+const DEFAULT_OG_IMAGE = '/og-image.png'
+const TWITTER_SITE = '@skittlesaur'
+const TWITTER_CREATOR = '@skittlesaur'
 
 interface SEOProps {
   title: string
@@ -52,19 +52,19 @@ const SEO = (
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="/apple-touch-icon.png"
+        href="/logo.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/favicon-32x32.png"
+        href="/logo.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/favicon-16x16.png"
+        href="/logo.png"
       />
     </Head>
   )
