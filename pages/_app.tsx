@@ -1,8 +1,15 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { Toaster } from 'react-hot-toast'
+import { ThemeProvider } from 'next-themes'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+
+const App = ({ Component, pageProps }: any) => {
+  return (
+    <ThemeProvider enableSystem={true} attribute="class">
+        <Toaster position="bottom-center" />
+        <Component {...pageProps} />
+    </ThemeProvider>
+  )
 }
 
-export default MyApp
+export default App
