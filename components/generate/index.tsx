@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Generated from '@components/generate/generated'
 import toast from 'react-hot-toast'
+import generateId from '@lib/generate-id'
 
 enum Views {
   SCHEMA,
@@ -12,9 +13,13 @@ enum Views {
 
 const Generate = () => {
   const [activeView, setActiveView] = useState(Views.SCHEMA)
-  const [fields, setFields] = useState<{ id: string, name: string, type: string }[]>([])
+  const [fields, setFields] = useState<{ id: string, name: string, type: string }[]>([{
+    id: generateId(),
+    name: '',
+    type: '',
+  }])
 
-  const generate = (fields: { id: string, name: string, type: string }[]) => {
+  const generate = () => {
     for (const field of fields) {
       if (!field.name) {
         toast.error('Field name cannot be empty')
@@ -26,7 +31,6 @@ const Generate = () => {
         return
       }
     }
-    setFields(fields)
     setActiveView(Views.GENERATED)
   }
 
@@ -41,8 +45,19 @@ const Generate = () => {
           transition={{ duration: 0.4 }}
           className="relative z-10"
         >
-          {activeView === Views.SCHEMA && <Schema generate={generate} />}
-          {activeView === Views.GENERATED && <Generated fields={fields} />}
+          {activeView === Views.SCHEMA && (
+            <Schema
+              fields={fields}
+              setFields={setFields}
+              generate={generate}
+            />
+          )}
+          {activeView === Views.GENERATED && (
+            <Generated
+              editSchema={() => setActiveView(Views.SCHEMA)}
+              fields={fields}
+            />
+          )}
         </motion.div>
       </AnimatePresence>
       <div className="absolute inset-0 overflow-hidden">

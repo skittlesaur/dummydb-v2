@@ -5,24 +5,19 @@ import AddIcon from '@icons/add.svg'
 import { useState } from 'react'
 import generateId from '@lib/generate-id'
 
-const Schema = ({ generate }: any) => {
-  const [fields, setFields] = useState<{ id: string, name: string, type: string }[]>([{
-    id: generateId(),
-    name: '',
-    type: '',
-  }])
+const Schema = ({ generate, fields, setFields }: any) => {
   const [modalOpen, setModalOpen] = useState(-1)
 
   const addField = () => {
-    setFields(prev => [...prev, { id: generateId(), name: '', type: '' }])
+    setFields((prev: any) => [...prev, { id: generateId(), name: '', type: '' }])
   }
 
   const removeField = (index: number) => {
-    setFields(prev => prev.filter((_, i) => i !== index))
+    setFields((prev: any[]) => prev.filter((_, i) => i !== index))
   }
 
   const updateField = (index: number, field: { id: string, name: string, type: string }) => {
-    setFields(prev => prev.map((f, i) => i === index ? field : f))
+    setFields((prev: any[]) => prev.map((f, i) => i === index ? field : f))
   }
 
   return (
@@ -50,7 +45,7 @@ const Schema = ({ generate }: any) => {
           </p>
         </div>
         <div className="flex flex-col gap-4 py-5">
-          {fields.map((field, i) => (
+          {fields.map((field: any, i: number) => (
             <Field
               key={field.id}
               field={field}

@@ -7,6 +7,7 @@ import CodeIcon from '@icons/code.svg'
 import Json from '@components/generate/views/json'
 import RefreshIcon from '@icons/refresh.svg'
 import DownloadIcon from '@icons/download.svg'
+import EditIcon from '@icons/edit.svg'
 
 enum Views {
   TABLE,
@@ -15,7 +16,7 @@ enum Views {
 
 const maxRows = 1000
 
-const Generated = ({ fields }: any) => {
+const Generated = ({ fields, editSchema }: any) => {
   const [view, setView] = useState(Views.TABLE)
   const [count, setCount] = useState(10)
   const [data, setData] = useState<any>()
@@ -52,6 +53,15 @@ const Generated = ({ fields }: any) => {
           </div>
         </div>
         <div className="flex items-stretch self-end gap-2">
+          <button
+            onClick={() => {
+              editSchema()
+            }}
+            className="bg-gray-900 p-2 rounded-md border border-gray-800 hover:border-gray-700 hover:bg-gray-800 transition-colors duration-200 ease-in-out"
+          >
+            <EditIcon className="w-6 h-6 fill-current text-gray-300" />
+            <span className="sr-only">Edit Schema</span>
+          </button>
           <input
             value={count}
             onChange={(e) => {
