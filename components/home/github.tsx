@@ -62,6 +62,16 @@ const Github = ({ releases }: Props) => {
             ))}
           </div>
         )}
+        {/* @todo: github issues */}
+        {activeTab === GithubTabs.ISSUES && (
+          <div className="flex flex-col">
+            <div className="flex items-center justify-between gap-4 text-gray-400 px-4 py-3 transition-all duration-200 ease-in-out">
+              <p className="text-center w-full">
+                No active issues
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
