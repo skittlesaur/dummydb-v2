@@ -1,10 +1,15 @@
-import index from '@lib/types/basic'
+import basic from '@lib/types/basic'
+import identifiers from '@lib/types/identifiers'
 
 const categories = [
   {
     title: 'Basic',
-    types: index,
+    types: basic,
   },
+  {
+    title: 'Identifiers',
+    types: identifiers,
+  }
 ]
 
 export default categories

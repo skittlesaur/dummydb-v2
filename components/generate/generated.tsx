@@ -20,14 +20,14 @@ const Generated = ({ fields }: any) => {
   const [count, setCount] = useState(10)
   const [data, setData] = useState<any>()
 
-  const generate = () => {
+  const generate = async () => {
     if (!fields) return
     if (count < 0) {
       toast.error('Count cannot be less than 0')
       return
     }
 
-    const res = generateFields(fields, count)
+    const res = await generateFields(fields, count)
     setData(res)
   }
 

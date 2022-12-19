@@ -21,7 +21,7 @@ const features = [
     ],
   },
   {
-    text: 'Supports authentication data types like $VALUES$',
+    text: 'Supports identifiers data types like $VALUES$',
     values: [
       'email',
       'username',
