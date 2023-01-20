@@ -7,7 +7,7 @@ const pages = [
   },
   {
     title: 'Contribute',
-    href: 'https://github.com/skittlesaur/dummydb',
+    href: 'https://github.com/skittlesaur/dummydb-v2',
   },
 ]
 
